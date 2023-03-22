@@ -15,5 +15,5 @@ docker build -t k_owncloud_img .
 This command is used to run locally baked image.
 
 ``` bash
-docker run -p 80:80 k_owncloud_img
+docker run -p 80:80 --name kashan_owncloud k_owncloud_img
 ```
