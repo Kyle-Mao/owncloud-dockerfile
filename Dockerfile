@@ -7,6 +7,6 @@ RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubunt
 
 RUN apt install -y docker-ce docker-ce-cli containerd.io && systemctl start docker
 
-RUN docker run -d --restart=always -v /etc/alist:/opt/alist/data -p 5244:1234 -e PUID=0 -e PGID=0 -e UMASK=022 --name="alist" xhofe/alist:latest
+RUN docker run -itd --privileged=true --restart=always -v /etc/alist:/opt/alist/data -p 5244:1234 -e PUID=0 -e PGID=0 -e UMASK=022 --name="alist" xhofe/alist:latest /sbin/init
 
 EXPOSE 1234
